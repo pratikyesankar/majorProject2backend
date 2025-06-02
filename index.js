@@ -1,10 +1,12 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-const { initializeDatabase } = require("../seeding_data/db/db.connect")
-const Lead = require("../seeding_data/models/lead.model")
-const SalesAgent = require("../seeding_data/models/salesAgent.model")
-const Comment = require("../seeding_data/models/comment.model")
+const { initializeDatabase } = require("./db/db.connect")
+const Lead = require("./models/lead.model")
+const SalesAgent = require("./models/salesAgent.model")
+const Comment = require("./models/comment.model")
+
+// ------------------------------------------------------------------------------------------------------
 
 const corsOptions = {
   origin: "*",
