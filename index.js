@@ -8,12 +8,12 @@ const Comment = require("./models/comment.model")
 
 // ------------------------------------------------------------------------------------------------------
 
-const corsOptions = {
-  origin: "https://major-project2frontend.vercel.app/",
-  credentials: true,
-  optionSuccessStatus: 200,
-}
-app.use(cors(corsOptions))
+// const corsOptions = {
+//   origin: "https://major-project2frontend.vercel.app/",
+//   credentials: true,
+//   optionSuccessStatus: 200,
+// }
+app.use(cors())
 app.use(express.json())
 
 initializeDatabase()
