@@ -9,7 +9,7 @@ const Comment = require("./models/comment.model")
 // ------------------------------------------------------------------------------------------------------
 
 const corsOptions = {
-  origin: "*",
+  origin: "https://major-project2frontend.vercel.app/",
   credentials: true,
   optionSuccessStatus: 200,
 }
@@ -65,6 +65,8 @@ app.post("/leads", async (req, res) => {
   }
 })
 
+// -----------------------------------------------------------------------------------------------------
+
 // Get all leads with optional filters
 async function readAllLeads(queryParams) {
   try {
@@ -94,6 +96,8 @@ app.get("/leads", async (req, res) => {
   }
 })
 
+// ----------------------------------------------------------------------------------------------------
+
 // Get lead by ID
 async function readLeadById(leadId) {
   try {
@@ -117,6 +121,8 @@ app.get("/leads/:id", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch lead" })
   }
 })
+
+// ------------------------------------------------------------------------------------------------------
 
 // Update lead by ID
 async function updateLeadById(leadId, data) {
@@ -162,6 +168,8 @@ app.post("/leads/:id", async (req, res) => {
     res.status(400).json({ error: error.message })
   }
 })
+
+// --------------------------------------------------------------------------------------------------
 
 // Delete lead by ID
 async function deleteLeadById(leadId) {
@@ -216,6 +224,8 @@ app.post("/agents", async (req, res) => {
     res.status(400).json({ error: error.message })
   }
 })
+
+// ------------------------------------------------------------------------------------------------
 
 // Get all sales agents
 async function readAllSalesAgents() {
@@ -274,6 +284,8 @@ app.post("/leads/:id/comments", async (req, res) => {
     res.status(400).json({ error: error.message })
   }
 })
+
+// -------------------------------------------------------------------------------------------
 
 // Get comments for a lead
 async function readCommentsByLeadId(leadId) {
